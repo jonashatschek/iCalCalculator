@@ -1,0 +1,504 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"margn",
+				"margin-left"
+			],
+			[
+				"ne",
+				"newrecipe"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"chec",
+				"checkedCode"
+			],
+			[
+				"check",
+				"checkCodes"
+			],
+			[
+				"amountOf",
+				"amountOfCodes"
+			],
+			[
+				"highe",
+				"highestInput"
+			],
+			[
+				"lowest",
+				"lowestInput"
+			],
+			[
+				"rando",
+				"randomIntFromInterval"
+			],
+			[
+				"Copy",
+				"copyToClipboard"
+			],
+			[
+				"cop",
+				"copyToClipboard"
+			],
+			[
+				"borde",
+				"border-width"
+			],
+			[
+				"arrayO",
+				"arrayOfItems"
+			],
+			[
+				"btn1",
+				"btn1"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"margi",
+				"margin-left"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"border",
+				"border-width"
+			],
+			[
+				"pla",
+				"playdemoKey"
+			],
+			[
+				"time",
+				"timenextKey"
+			],
+			[
+				"btn2",
+				"btn2"
+			],
+			[
+				"sou",
+				"soundId"
+			],
+			[
+				"tile",
+				"tile2"
+			],
+			[
+				"click",
+				"clickCounter"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"siz",
+				"font-size"
+			],
+			[
+				"border-c",
+				"border-color"
+			],
+			[
+				"s",
+				"script"
+			],
+			[
+				"fill",
+				"fillStyle"
+			],
+			[
+				"fil",
+				"fillStyle"
+			],
+			[
+				"head",
+				"header	Tag"
+			],
+			[
+				"server",
+				"serverPass"
+			],
+			[
+				"user",
+				"userRow"
+			],
+			[
+				"mysql",
+				"mysql_query"
+			],
+			[
+				"mysq",
+				"mysql_connect"
+			],
+			[
+				"fi",
+				"font-variant"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"si",
+				"font-size"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"S",
+				"script"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 381.0,
+		"last_filter": "packa",
+		"selected_items":
+		[
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"broae",
+				"Preferences: Browse Packages"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 568.0
+	},
+	"console":
+	{
+		"height": 178.0,
+		"history":
+		[
+			"npm install -g grunt-cli",
+			"git clone https://github.com/int3h/SublimeFixMacPath.git ~/Library/Application\\ Support/Sublime\\ Text\\ 3/Packages/FixMacPath",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			" import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			" import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"git clone https://github.com/gerardroche/sublime-phpck.git ~/Library/Application\\ Support/Sublime\\ Text\\ 2/Packages/php-completions",
+			"git clone https://github.com/gerardroche/sublime-phpck.git ~/Library/Application\\ Support/Sublime\\ Text\\ 3/Packages/php-completions",
+			"import urllib2,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation') ",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/XAMPP/xamppfiles/htdocs/iCalCounter/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/iCalCounter/js.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/receptsamling2/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/receptsamling2/js.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/receptsamling2/newrecipe.php",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab5/Labb5 Jonas Hatschek/Uppgift 2/memory.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/receptsamling/displayrecipe.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/Davids_algorithm/stylesheet.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/Davids_algorithm/index.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-config.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/Ny_db/login.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/wordpressPortfolio/wp-config.php",
+		"/Users/jonashatschek/Dropbox/Vintage oldschool leather interior website/SENASTEEEE/backup2/website/action.php",
+		"/Users/jonashatschek/Dropbox/Vintage oldschool leather interior website/SENASTEEEE/backup2/website/usersave.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/epochrecords/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/epochrecords/js.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/epochrecords/index.html",
+		"/Users/jonashatschek/Dropbox/Vintage oldschool leather interior website/SENASTEEEE/backup2/website/functionsproj.php",
+		"/Users/jonashatschek/Dropbox/Vintage oldschool leather interior website/SENASTEEEE/backup2/website/modal.php",
+		"/Users/jonashatschek/Dropbox/Vintage oldschool leather interior website/SENASTEEEE/backup2/website/js/js.js",
+		"/Users/jonashatschek/Dropbox/Vintage oldschool leather interior website/SENASTEEEE/backup2/website/website.php",
+		"/Users/jonashatschek/Dropbox/1. Vad har tredje man för rättslig ställning om du",
+		"/Users/jonashatschek/Dropbox/david algorith/Davids algorithm/requestfromdb.php",
+		"/Users/jonashatschek/Dropbox/david algorith/Davids algorithm/functions.php",
+		"/Users/jonashatschek/Dropbox/david algorith/Davids algorithm/connect.php",
+		"/Users/jonashatschek/Dropbox/david algorith/Davids algorithm/index.php",
+		"/Users/jonashatschek/Dropbox/david algorith/Davids algorithm/displayCodes.php",
+		"/Users/jonashatschek/Dropbox/david algorith/Davids algorithm/php.php",
+		"/Users/jonashatschek/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jonashatschek/Library/Application Support/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+		"/Users/jonashatschek/Library/Application Support/Sublime Text 3/Packages/User/JSON.sublime-settings",
+		"/Applications/XAMPP/xamppfiles/htdocs/Databasprojekt-film/Failed.php",
+		"/Users/jonashatschek/Dropbox/david algorith/Davids algorithm/deleteDB.php",
+		"/Users/jonashatschek/Dropbox/david algorith/Davids algorithm/att göra.txt",
+		"/Users/jonashatschek/Dropbox/david algorith/Davids algorithm/stylesheet.css",
+		"/Users/jonashatschek/Dropbox/david algorith/Davids algorithm/js.js",
+		"/Users/jonashatschek/Dropbox/Vintage oldschool leather interior website/SENASTEEEE/backup2/website/links.php",
+		"/Users/jonashatschek/Desktop/inget speciellt, men släng inte.txt",
+		"/Users/jonashatschek/Desktop/Jobb/Nya ord jag lär mig.txt",
+		"/Users/jonashatschek/Desktop/Jobb/Att göra på jobbet.txt",
+		"/Users/jonashatschek/Desktop/Jobb/Star Stable (vagrant, ansible, docker)",
+		"/Users/jonashatschek/Desktop/Jobb/Bettsson juniorutvecklare",
+		"/Users/jonashatschek/Desktop/Jobb/hi3g (javautvecklare)",
+		"/Users/jonashatschek/Desktop/Jobb/Kambi (java)",
+		"/Users/jonashatschek/Desktop/Jobb/viaplay (javautvecklare)",
+		"/Users/jonashatschek/Desktop/Att göra på jobbet.txt",
+		"/Users/jonashatschek/Desktop/Att göra med java",
+		"/Users/jonashatschek/Documents/tf/style.css",
+		"/Users/jonashatschek/Documents/tf/index.html",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T3/Inledande programmering i Java/Labb 3, moving girl/MovingGirl 3/maps/level1.txt",
+		"/Users/jonashatschek/Documents/tf/script.js",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T3/Inledande programmering i Java/Labb 3, moving girl/MovingGirl 3/maps/Level2kod-slask",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T3/Inledande programmering i Java/Labb 3, moving girl/MovingGirl 3/maps/level1",
+		"/Users/jonashatschek/Desktop/javaLeveltest.java",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab7/Lab7-Jonas-Hatschek/uppgift2/transitions.css",
+		"/Users/jonashatschek/Dropbox/multimedia_game_project/site/v7/scripts/main.js",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab7/Lab7-Jonas-Hatschek/uppgift3/animations.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/skivling/js/scripts.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/skivling/css/main.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/skivling/index.html",
+		"/Users/jonashatschek/Desktop/feedback petters site.txt",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab8/uppgift2/index.html",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab8/uppgift2/video.css",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab7/uppgift2/transitions.css",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab7/uppgift2/index.html",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab7/uppgift1/transformations.css",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab7/uppgift1/index.html",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab7/uppgift3/readme.txt",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab7/uppgift3/index.html",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab7/uppgift3/animations.css",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab6/Lab6_Jonas_Hatschek/uppgift3/readme.txt",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab6/uppgift3/stylesheet.css",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab6/uppgift3/index.html",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab6/uppgift2/story.txt",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab7/uppgift2/readme.txt",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab7/uppgift1/readme.txt",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T3/Inledande programmering i Java/book-scenarios/book-scenarios/Länkar.txt",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab5/Uppgift 2/memory.js",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab5/Uppgift1/button.js",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab5/Uppgift1/button.css",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab5/Uppgift1/index.html",
+		"/Users/jonashatschek/Downloads/uppgift1/index.html",
+		"/Users/jonashatschek/Downloads/uppgift1/button.js",
+		"/Users/jonashatschek/Desktop/att göra på javaprojektet",
+		"/Users/jonashatschek/Dropbox/multimedia_game_project/site/v6/v6/css/main.css",
+		"/Users/jonashatschek/Desktop/v6/index.html",
+		"/Users/jonashatschek/Desktop/v6/scripts/main.js",
+		"/Users/jonashatschek/Desktop/v6/v6/css/main.css",
+		"/Users/jonashatschek/Desktop/v6/v6/index.html",
+		"/Users/jonashatschek/Dropbox/multimedia_game_project/site/v6/v6/scripts/main.js",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab4/Uppgift 1/index.html",
+		"/Users/jonashatschek/Downloads/labb4_edvin_boberg/uppgift1/index.html",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab4/Uppgift 3/menu.js",
+		"/Users/jonashatschek/Documents/projekt/v5/index.html",
+		"/Users/jonashatschek/Documents/projekt/v5/scripts/main.js",
+		"/Users/jonashatschek/Dropbox/multimedia_game_project/site/Projektarbete v3/Projektarbete/index.html",
+		"/Users/jonashatschek/Dropbox/multimedia_game_project/site/Projektarbete v3/Projektarbete/stylesheet.css",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab5/Uppgift 2/readme.txt",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab5/Uppgift 2/index.html",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab5/Uppgift 2/memory.css",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab5/Uppgift1/readme.txt",
+		"/Users/jonashatschek/Dropbox/multimedia_game_project/site/projektarbete v2/Projektarbete/projekt.js",
+		"/Users/jonashatschek/Dropbox/multimedia_game_project/site/projektarbete v2/Projektarbete/index.html",
+		"/Users/jonashatschek/Dropbox/multimedia_game_project/site/Projektarbete/projekt.js",
+		"/Users/jonashatschek/Dropbox/multimedia_game_project/site/Projektarbete/index.html",
+		"/Users/jonashatschek/Dropbox/multimedia_game_project/site/Projektarbete/stylesheet.css",
+		"/Users/jonashatschek/Dropbox/multimedia_game_project/site/stylesheets/stylesheet.css",
+		"/Users/jonashatschek/Dropbox/multimedia_game_project/site/index.html",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab4/Uppgift 3/menu.css",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab4/Uppgift 3/index.html",
+		"/Users/jonashatschek/Desktop/lite html/testalite.html",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab4/Uppgift 1/hello.js",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab4/Uppgift 1/hello.css",
+		"/Users/jonashatschek/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab2/canvas-viewer-master/js/patterns.js",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab1/Lab1_Jonas_Hatschek/Uppgift1/pattern.svg",
+		"/Users/jonashatschek/Dropbox/Systemvetarprogrammet/Systemvetarprogrammet/T4/Multimedia/Labbar/Lab1/Lab1_Jonas_Hatschek/Uppgift3/pattern.svg",
+		"/Users/jonashatschek/Desktop/recept julkrydda",
+		"/Users/jonashatschek/GitHub/Bajskorv/untitled.html",
+		"/Users/jonashatschek/Desktop/labbar algoDS/lab1_JonasHatschek.ml",
+		"/Applications/XAMPP/xamppfiles/htdocs/Ny_db/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/Toves blogg/index.html",
+		"/Users/jonashatschek/Desktop/Textrutor",
+		"/Applications/XAMPP/xamppfiles/htdocs/Toves blogg/stylesheet.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/Ny_db/Home.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/Ny_db/stylesheet.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/Ny_db/Failed.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/Databasprojekt-film/login.php"
+	],
+	"find":
+	{
+		"height": 30.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"php",
+			"temp",
+			".\n",
+			"\"];\n",
+			";\n"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "style.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Dropbox/Vintage oldschool leather interior website/SENASTEEEE/backup2/website/website.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 257.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
