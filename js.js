@@ -6,24 +6,23 @@ $(document).ready(function(){
         });
 
 
-        function getFocusPoint (text) {
-            var word = "";
+        function getFocusPoint (text, eventDescription, date, month, year, hours) {
+
+            var word = eventDescription + date + month + year + hours[0] + hours[1];
+            alert(word);
 
             for (var i = 0; i > text.length; i++){
                 word = text.substr(i, i + 12)
 
                 if (word == "Schemalagd:"){
+                    text = text.substr(0)
 
+                    //Fråga om jag kan jobba hemifrån onsdag
+                    //Schemalagd: 6 apr. 2016 16:00 till 17:00
                     }
             }
 
-                for (var j = 0; j > 12; j++){
-                    word[j] += text[i];
-                }
-
         }
-
-        function break
 
         function InputDate (text){
 
@@ -32,10 +31,12 @@ $(document).ready(function(){
             var getDateTest = getDate(text, getMonthTest[1]);
             var getHoursTest = getHours(text);
             var getYearTest = getYear(text);
+            var trim = getFocusPoint(text, getDescriptionTest, getDateTest, getMonthTest[2], getYearTest, getHoursTest);
+
             $("#outputFrame-div").append(getDescriptionTest + '<br/>' + getDateTest  +  getMonthTest[0] + getYearTest +  getHoursTest + '.' + '<br/>');
         }
 
-        function getEventDescription(text){
+        function getEventDescription (text){
 
             var firstLetter = text[text.length - 39];
             var getDescription = 0;
@@ -110,8 +111,6 @@ $(document).ready(function(){
 
             var amountOfHours = finishingHourInt - startingHourInt;
 
-
-
             if (amountOfHours > 1 || amountOfHours == 0) {
                 var returnAmountString = " vilket totalt blir " + amountOfHours + " timmar";
             }
@@ -145,6 +144,7 @@ $(document).ready(function(){
                 }
             }
             else if (type == 2){
+
                 var firstNumber = text[text.length - 28];
                 var lastNumber = text[text.length - 27];
 
@@ -185,6 +185,9 @@ $(document).ready(function(){
             for (var i = 25; i >= 23; i--){
                 month += text[inputLength - i];
             }
+            var formatKeeper = "";
+
+            formatKeeper = month;
 
             switch (month) {
 
@@ -252,7 +255,7 @@ $(document).ready(function(){
                     break;
             }
 
-            var returnArray = [month, type];
+            var returnArray = [month, type, formatKeeper];
             return returnArray;
         }
 
