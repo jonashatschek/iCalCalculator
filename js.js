@@ -8,9 +8,12 @@ $(document).ready(function(){
 
         function getFocusPoint (text, eventDescription, date, month, year, hours) {
 
-            var word = eventDescription + date + month + year + hours[0] + hours[1];
-            alert(word);
+            var inputSentence = eventDescription + "Schemalagd: " + date + month + " " + year + hours[0] + " till" + hours[1];
+            alert(inputSentence);
 
+            var separatedInput = text.replace(inputSentence, "");
+
+            /*
             for (var i = 0; i > text.length; i++){
                 word = text.substr(i, i + 12)
 
@@ -21,6 +24,7 @@ $(document).ready(function(){
                     //Schemalagd: 6 apr. 2016 16:00 till 17:00
                     }
             }
+            */
 
         }
 
@@ -33,16 +37,16 @@ $(document).ready(function(){
             var getYearTest = getYear(text);
             var trim = getFocusPoint(text, getDescriptionTest, getDateTest, getMonthTest[2], getYearTest, getHoursTest);
 
-            $("#outputFrame-div").append(getDescriptionTest + '<br/>' + getDateTest  +  getMonthTest[0] + getYearTest +  getHoursTest + '.' + '<br/>');
+            $("#outputFrame-div").append('<br/>' + getDescriptionTest + '<br/>' + getDateTest  +  getMonthTest[0] + " år " + getYearTest +  " från kl. " + getHoursTest[0] + " till kl. " + getHoursTest[1] + '.' + '<br/>');
         }
 
         function getEventDescription (text){
 
             var firstLetter = text[text.length - 39];
             var getDescription = 0;
-            var returnEvent = " ";
+            var returnEvent = "";
 
-            if(firstLetter == "S" || firstLetter == "c" || firstLetter == "h")   {
+            if(firstLetter == "S" || firstLetter == "c" || firstLetter == "h"){
 
                 //if firstLetter = "S" = alla månader utom maj och datum 9 <
                 //if firstLetter = "c" = antingen är det maj eller så är det ensiffrigt
@@ -98,8 +102,8 @@ $(document).ready(function(){
             }
 
             var hoursCount = countHours(startingTime, finishingTime);
-            startingTime = " från kl. " + startingTime;
-            finishingTime = " till kl. " + finishingTime;
+            startingTime = " " + startingTime + ":00";
+            finishingTime = " " + finishingTime + ":00";
             var returnHourArray = [startingTime, finishingTime, hoursCount];
 
             return returnHourArray;
@@ -169,7 +173,7 @@ $(document).ready(function(){
             }
             */
 
-            date = "Planerad " + date + " ";
+            date = "" + date + " ";
 
             return date;
         }
@@ -261,7 +265,7 @@ $(document).ready(function(){
 
         function getYear (text){
             var inputLength = text.length;
-            var year = " år ";
+            var year = "";
 
             for (var i = 21; i > 17; i--){
                 year += text[inputLength - i];
