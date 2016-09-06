@@ -25,39 +25,38 @@ $(document).ready(function(){
 
         function getInput (input) {
 
-            var separatedInput = "";
-
-            separatedInput = getEventDescription1(input, "Schemalagd");
-            return separatedInput;
+            var description = "";
+            var details = "";
+            description = getEventDescription1(input, "Schemalagd");
+            details = defineEnding(input, description[1]);
+            return description;
 
         }
 
         function getEventDescription1 (text, keyword) {
-            alert(keyword);
 
             var spotlight = "";
             var searchForDivider = keyword;
-            var description = "";
+            var description = ["", ""];
 
             for (var i = 0; i < text.length; i++){
 
                 spotlight = text.substring(i, i+10);
-                alert(spotlight);
 
                 if(spotlight == searchForDivider){
 
-                    description = text.substring(0, i);
-                    alert(description);
+                    description = [text.substring(0, i), i];
+
                     return description;
                 }
             }
 
         }
 
-        function defineEnding (input) {
+        function defineEnding (input, descriptionLength) {
 
-            var description = getEventDescription(input);
-            var trimDescriptionFromInput = input.substring(description[1], input.length);          
+            var description = "";
+            //var trimDescriptionFromInput = input.substring(description[1], input.length);          
             var textHolder = "";
             var countZerosInInput = 0;
 
@@ -69,7 +68,10 @@ $(document).ready(function(){
 
                     countZerosInInput++;
 
-                    if(countZerosInInput >= 8) {
+                    if(countZerosInInput == 0) {
+
+                        var details = input.substring(descriptionLength, i)
+                        alert(details);
 
                         var eventAndDescriptionReturnArray = [description[0], textHolder];
                         return eventAndDescriptionReturnArray;
