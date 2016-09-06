@@ -5,46 +5,89 @@ $(document).ready(function(){
             var input = new InputDate(text);
         });
 
+        function InputDate (input){
 
-        function getFocusPoint (text, eventDescription, date, month, year, hours) {
+            var separatedInput = getInput(input);
+            alert(separatedInput);
 
-            var inputSentence = eventDescription + "Schemalagd: " + date + month + " " + year + hours[0] + " till" + hours[1];
-            alert(inputSentence);
-
-            var separatedInput = text.replace(inputSentence, "");
-
-            /*
-            for (var i = 0; i > text.length; i++){
-                word = text.substr(i, i + 12)
-
-                if (word == "Schemalagd:"){
-                    text = text.substr(0)
-
-                    //Fråga om jag kan jobba hemifrån onsdag
-                    //Schemalagd: 6 apr. 2016 16:00 till 17:00
-                    }
-            }
-            */
-
-        }
-
-        function InputDate (text){
-
-            var getDescriptionTest = getEventDescription(text);
-            var getMonthTest =  getMonth(text);
-            var getDateTest = getDate(text, getMonthTest[1]);
-            var getHoursTest = getHours(text);
-            var getYearTest = getYear(text);
-            var trim = getFocusPoint(text, getDescriptionTest, getDateTest, getMonthTest[2], getYearTest, getHoursTest);
-
+            //var getDescriptionTest = getEventDescription(separatedInput);
+            var getMonthTest =  getMonth(separatedInput);
+            var getDateTest = getDate(separatedInput, getMonthTest[1]);
+            var getHoursTest = getHours(separatedInput);
+            var getYearTest = getYear(separatedInput);
+            //var trim = getFocusPoint(text, getDescriptionTest, getDateTest, getMonthTest[2], getYearTest, getHoursTest);
+            
             $("#outputFrame-div").append('<br/>' + getDescriptionTest + '<br/>' + getDateTest  +  getMonthTest[0] + " år " + getYearTest +  " från kl. " + getHoursTest[0] + " till kl. " + getHoursTest[1] + '.' + '<br/>');
+
+            //$("#outputFrame-div").append(testInput);
+
         }
 
+        function getInput (input) {
+
+            var separatedInput = "";
+
+            separatedInput = getEventDescription1(input, "Schemalagd");
+            return separatedInput;
+
+        }
+
+        function getEventDescription1 (text, keyword) {
+            alert(keyword);
+
+            var spotlight = "";
+            var searchForDivider = keyword;
+            var description = "";
+
+            for (var i = 0; i < text.length; i++){
+
+                spotlight = text.substring(i, i+10);
+                alert(spotlight);
+
+                if(spotlight == searchForDivider){
+
+                    description = text.substring(0, i);
+                    alert(description);
+                    return description;
+                }
+            }
+
+        }
+
+        function defineEnding (input) {
+
+            var description = getEventDescription(input);
+            var trimDescriptionFromInput = input.substring(description[1], input.length);          
+            var textHolder = "";
+            var countZerosInInput = 0;
+
+            for (var i = 0; i < input.length; i++) {
+
+                textHolder += input[i];
+
+                if(!isNaN(input[i])){
+
+                    countZerosInInput++;
+
+                    if(countZerosInInput >= 8) {
+
+                        var eventAndDescriptionReturnArray = [description[0], textHolder];
+                        return eventAndDescriptionReturnArray;
+
+                    }
+                }
+
+            }
+
+        }
+
+        /*
         function getEventDescription (text){
 
             var firstLetter = text[text.length - 39];
-            var getDescription = 0;
-            var returnEvent = "";
+            var descriptionType = 0;
+            var eventDescription = "";
+            var eventLength = 0;
 
             if(firstLetter == "S" || firstLetter == "c" || firstLetter == "h"){
 
@@ -57,17 +100,17 @@ $(document).ready(function(){
                     break;
 
                     case "c":
-                    getDescription = 1;
+                    descriptionType = 1;
                     break;
 
                     case "h":
-                    getDescription = 2;
+                    descriptionType = 2;
                     break;
                 }
 
-                for (var i = 0; i < text.length - (39 + getDescription); i++){
+                for (var i = 0; i < text.length - (39 + descriptionType); i++){
 
-                    returnEvent += text[i];
+                    eventDescription += text[i];
                 }
 
             }
@@ -76,35 +119,38 @@ $(document).ready(function(){
 
                 alert("Something went wrong!");
             }
+            eventLength = eventDescription.length;
 
-            return returnEvent;
+            var lengthAndDataReturnArray = [eventDescription, eventLength];
+
+            return lengthAndDataReturnArray;
         }
+        */
 
         $("div").css("border", "1px solid red");
 
         //TODO: implementera funktionalitet för minuter
-        function getHours(text){
-            var inputLength = text.length;
+        function getHours(input){
 
             var startingHour = 15;
             var finishingHour = 4;
             var startingTime = "";
             var finishingTime = "";
 
-            for (var i = 1; i >= 0; i--){
+                for (var i = 1; i >= 0; i--){
 
-            var iterateStart = startingHour + i;
-            var iterateFinish = finishingHour + i;
+                    var iterateStart = startingHour + i;
+                    var iterateFinish = finishingHour + i;
 
-            startingTime += text[inputLength - iterateStart];
-            finishingTime += text[inputLength - iterateFinish];
+                    startingTime += input[input.length - iterateStart];
+                    finishingTime += input[input.length - iterateFinish];
 
-            }
+                }
 
             var hoursCount = countHours(startingTime, finishingTime);
             startingTime = " " + startingTime + ":00";
             finishingTime = " " + finishingTime + ":00";
-            var returnHourArray = [startingTime, finishingTime, hoursCount];
+            var returnHourArray = [startingTime, finishingTime, hoursCount[0], hoursCount[1]];
 
             return returnHourArray;
         }
@@ -178,7 +224,7 @@ $(document).ready(function(){
             return date;
         }
 
-        function getMonth (text) {
+        function getMonth (text){
 
             var inputLength = text.length;
             var month = "";
@@ -281,4 +327,3 @@ $(document).ready(function(){
         }
     //};
 });
-
