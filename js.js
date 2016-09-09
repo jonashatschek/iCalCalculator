@@ -1,23 +1,26 @@
 $(document).ready(function(){
 
         $("#submitBtn").click(function() {
+
             var text = $(".inputCalTextArea").val();
             var input = new InputDate(text);
+
         });
 
         function InputDate (input){
 
             var separatedInput = getInput(input);
-            alert(separatedInput);
+            //alert(separatedInput);
 
-            //var getDescriptionTest = getEventDescription(separatedInput);
+            /*
+            var getDescriptionTest = getEventDescription1(separatedInput);
             var getMonthTest =  getMonth(separatedInput);
             var getDateTest = getDate(separatedInput, getMonthTest[1]);
             var getHoursTest = getHours(separatedInput);
             var getYearTest = getYear(separatedInput);
             //var trim = getFocusPoint(text, getDescriptionTest, getDateTest, getMonthTest[2], getYearTest, getHoursTest);
-            
-            $("#outputFrame-div").append('<br/>' + getDescriptionTest + '<br/>' + getDateTest  +  getMonthTest[0] + " år " + getYearTest +  " från kl. " + getHoursTest[0] + " till kl. " + getHoursTest[1] + '.' + '<br/>');
+            */
+            //$("#outputFrame-div").append('<br/>' + '<br/>' + getDateTest  +  getMonthTest[0] + " år " + getYearTest +  " från kl. " + getHoursTest[0] + " till kl. " + getHoursTest[1] + '.' + '<br/>');
 
             //$("#outputFrame-div").append(testInput);
 
@@ -27,23 +30,27 @@ $(document).ready(function(){
 
             var description = "";
             var details = "";
+            var descriptionAndDetails = "";
             description = getEventDescription1(input, "Schemalagd");
-            details = defineEnding(input, description[1]);
-            return description;
+            details = defineEnding(input.substring(description[1], input.length));
+            alert(details);
+            descriptionAndDetails = description + " " + details;
+            return descriptionAndDetails;
 
         }
 
         function getEventDescription1 (text, keyword) {
 
             var spotlight = "";
-            var searchForDivider = keyword;
+            var searchForDividePoint = keyword;
             var description = ["", ""];
+            var test = text;
 
             for (var i = 0; i < text.length; i++){
 
-                spotlight = text.substring(i, i+10);
+                spotlight = test.substring(i, i+10);
 
-                if(spotlight == searchForDivider){
+                if(spotlight == searchForDividePoint){
 
                     description = [text.substring(0, i), i];
 
@@ -53,7 +60,7 @@ $(document).ready(function(){
 
         }
 
-        function defineEnding (input, descriptionLength) {
+        function defineEnding (input) {
 
             var description = "";
             //var trimDescriptionFromInput = input.substring(description[1], input.length);          
@@ -62,19 +69,22 @@ $(document).ready(function(){
 
             for (var i = 0; i < input.length; i++) {
 
-                textHolder += input[i];
+                textHolder += input[i]; //adds the searched-through input into a textholder
 
-                if(!isNaN(input[i])){
+                if(input[i].isInteger() && textHolder.length >= 20){
 
                     countZerosInInput++;
 
-                    if(countZerosInInput == 0) {
+                    if(countZerosInInput == 12) {
 
-                        var details = input.substring(descriptionLength, i)
+                        return textHolder;
+                        /*
+                        var details = input.substring(descriptionLength, i);
                         alert(details);
 
                         var eventAndDescriptionReturnArray = [description[0], textHolder];
                         return eventAndDescriptionReturnArray;
+                        */
 
                     }
                 }
