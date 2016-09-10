@@ -32,8 +32,8 @@ $(document).ready(function(){
             var details = "";
             var descriptionAndDetails = "";
             description = getEventDescription1(input, "Schemalagd");
-            details = defineEnding(input.substring(description[1], input.length));
-            alert(details);
+            details = defineEnding(input.substring(description[1], input.length)); //sends in input without first event
+            //alert(details);
             descriptionAndDetails = description + " " + details;
             return descriptionAndDetails;
 
@@ -62,31 +62,29 @@ $(document).ready(function(){
 
         function defineEnding (input) {
 
-            var description = "";
-            //var trimDescriptionFromInput = input.substring(description[1], input.length);          
             var textHolder = "";
-            var countZerosInInput = 0;
+            var countSemicolonsInInput = 0;
 
-            for (var i = 0; i < input.length; i++) {
+            var dateReturn = getDate1(input);
+            alert(dateReturn);
+            var monthArray = getMonth(input, dateReturn[1]);
+            alert(monthArray);
 
-                textHolder += input[i]; //adds the searched-through input into a textholder
+            for (var i = 0; i < input.length; i++){
 
-                if(input[i].isInteger() && textHolder.length >= 20){
+                textHolder += input[i]; //copies a part of the input into a separate variable
 
-                    countZerosInInput++;
+                if(textHolder == ":"){
 
-                    if(countZerosInInput == 12) {
+                    countSemicolonsInInput++;
 
-                        return textHolder;
-                        /*
-                        var details = input.substring(descriptionLength, i);
-                        alert(details);
+                }
 
-                        var eventAndDescriptionReturnArray = [description[0], textHolder];
-                        return eventAndDescriptionReturnArray;
-                        */
+                if (countSemicolonsInInput == 2){
 
-                    }
+                    return textHolder;
+                    break;
+
                 }
 
             }
@@ -190,63 +188,51 @@ $(document).ready(function(){
             return returnAmountArray;
         }
 
-        function getDate(text, type){
+        //TODO: work with this so its compatible with the new month-setup
+        function getDate1(input){
 
             var date = "";
+            var dateType = 0;
 
-            if (type == 1){
-                var firstNumber = text[text.length - 29];
-                var lastNumber = text[text.length - 28];
+            var firstNumber = input[12];
+            var secondNumber = input[13];
 
-                if(firstNumber == " "){
-                    date = lastNumber;
-                }
-                else {
-                    date = firstNumber + lastNumber;
-                }
-            }
-            else if (type == 2){
-
-                var firstNumber = text[text.length - 28];
-                var lastNumber = text[text.length - 27];
-
-                if (firstNumber == " "){
-                    date = lastNumber;
-                }
-                else {
-                    date = firstNumber + lastNumber;
-
-                }
+            if(secondNumber == " "){
+                date = firstNumber;
+                dateType = 1;
             }
             else {
-                alert("Wrong type");
+                date = firstNumber + secondNumber;
+                dateType = 2;
             }
 
-            /*
-            if(lastNumber == " "){
-                var date = firstNumber;
-            }
-            else{
-                var date = firstNumber + lastNumber;
-            }
-            */
+            var dateAndDateTypeReturnArray = [date, dateType];
 
-            date = "" + date + " ";
+            return dateAndDateTypeReturnArray;
 
-            return date;
         }
 
-        function getMonth (text){
+        function getMonth (input, dateType){
 
-            var inputLength = text.length;
+            var inputLength = input.length;
             var month = "";
             var type = 0;
+            var i = 15;
+            var defineLength = 0;
             //type 1 => 4 chars
             //type 2 = 3 chars
 
-            for (var i = 25; i >= 23; i--){
-                month += text[inputLength - i];
+            if (dateType == 2){
+                i = 16;
             }
+
+            defineLength = i + 3;
+
+            for (; i < defineLength; i++){
+
+                month += input[i];
+            }
+
             var formatKeeper = "";
 
             formatKeeper = month;
