@@ -9,21 +9,21 @@ $(document).ready(function(){
 
         function InputDate (input){
 
-            var separatedInput = getInput(input);
+            var remainingInput = input;
+            var remainingInputLength = 0;
 
-            //alert(separatedInput);
+            /*for (var i = 0; i < input.length; i++) {
 
-            /*
-            var getDescriptionTest = getEventDescription1(separatedInput);
-            var getMonthTest =  getMonth(separatedInput);
-            var getDateTest = getDate(separatedInput, getMonthTest[1]);
-            var getHoursTest = getHours(separatedInput);
-            var getYearTest = getYear(separatedInput);
-            //var trim = getFocusPoint(text, getDescriptionTest, getDateTest, getMonthTest[2], getYearTest, getHoursTest);
+                if (remainingInput === ""){
+                    break;
+                }
+                */
+                remainingInputLength = getInput(remainingInput);
+                /*
+                remainingInput = remainingInput.substring(remainingInputLength, remainingInput.length);
+
+            }
             */
-            //$("#outputFrame-div").append('<br/>' + '<br/>' + getDateTest  +  getMonthTest[0] + " år " + getYearTest +  " från kl. " + getHoursTest[0] + " till kl. " + getHoursTest[1] + '.' + '<br/>');
-
-            //$("#outputFrame-div").append(testInput);
 
         }
 
@@ -32,17 +32,20 @@ $(document).ready(function(){
             var descriptionAndDetails = "";
             var description = getEventDescription(input, "Schemalagd");
             var details = defineEnding(input.substring(description[1], input.length)); //sends in input without first event
+            alert(details);
+            var remainingLength = publishEventOnSite(description, details);
 
-            descriptionAndDetails = description[0] + details;
+            return remainingLength;
 
+        }
 
-//Pappa fyller år
-//Schemalagd: 23 aug. 2016 12:00 till 13:00
+        function publishEventOnSite (description, details) {
 
-            $("#outputFrame-div").append(descriptionAndDetails);
+            //Pappa fyller år
+            //Schemalagd: 23 aug. 2016 12:00 till 13:00
 
-            return descriptionAndDetails;
-
+            var stringCounter = $("#outputFrame-div").append(description[0] + "Schemalagd: " + details[0] + " " + details[1] + " " + details[2] + " " + details[3] + " till " + details[4]);
+            return stringCounter.length;
         }
 
         function getEventDescription (text, keyword) {
@@ -50,11 +53,10 @@ $(document).ready(function(){
             var spotlight = "";
             var searchForDividePoint = keyword;
             var description = ["", ""];
-            var test = text;
 
             for (var i = 0; i < text.length; i++){
 
-                spotlight = test.substring(i, i+10);
+                spotlight = text.substring(i, i+10);
 
                 if(spotlight == searchForDividePoint){
 
@@ -75,7 +77,6 @@ $(document).ready(function(){
             var hoursArray = getHours(input, yearArray[1]);
 
             var endingDetails = [dateArray[0], monthArray[2], yearArray[0], hoursArray[0], hoursArray[1]];
-            alert(endingDetails);
 
             return endingDetails;
 
@@ -190,7 +191,6 @@ $(document).ready(function(){
 
         function getMonth (input, dateTypeString){
 
-            var inputLength = input.length;
             var month = "";
             var type = 0;
             var i = 15;
@@ -199,86 +199,87 @@ $(document).ready(function(){
             //type 2 = 3 chars
 
             if (dateTypeString == 2){
-                i = 16;
+                i = 15
             }
 
-            defineLength = i + 3;
+            defineLength = i + 4;
 
             for (; i < defineLength; i++){
 
                 month += input[i];
             }
+            alert(month);
 
             var formatKeeper = "";
 
             switch (month) {
 
-                case "an.":
+                case "jan.":
                     month = "januari";
                     type = 1;
                     formatKeeper = "jan.";
                     break;
 
-                case "eb.":
+                case "feb.":
                     month = "februari";
                     type = 1;
                     formatKeeper = "feb.";
                     break;
 
-                case "ars":
+                case "mars":
                     month = "mars";
                     type = 1;
                     formatKeeper = "mars";
                     break;
 
-                case "pr.":
+                case "apr.":
                     month = "april";
                     type = 1;
                     formatKeeper = "apr.";
                     break;
 
-                case "maj":
+                case "maj ":
                     type = 2;
                     formatKeeper = "maj";
                     break;
 
-                case "uni":
+                case "juni":
                     month = "juni";
                     type = 1;
                     formatKeeper = "juni";
                     break;
 
-                case "uli":
+                case "juli":
                     month = "juli";
                     type = 1;
                     formatKeeper = "juli";
                     break;
 
-                case "ug.":
+                case "aug.":
                     month = "augusti";
                     type = 1;
                     formatKeeper = "aug."
                     break;
 
-                case "ept.":
+                case "sept.":
                     month = "september";
                     type = 1;
                     formatKeeper = "sep.";
                     break;
 
-                case "kt.":
+                case "okt.":
                     month = "oktober";
                     type = 1;
                     formatKeeper = "okt.";
                     break;
 
-                case "ov.":
+                case "nov.":
                     month = "november";
                     type = 1;
                     formatKeeper = "nov.";
                     break;
 
-                case "ec.":
+                case "dec.":
                     month = "december";
                     type = 1;
                     formatKeeper = "dec.";
@@ -311,5 +312,4 @@ $(document).ready(function(){
             var result = amountOfHours * salary;
             return result;
         }
-    //};
 });
