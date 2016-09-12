@@ -10,6 +10,7 @@ $(document).ready(function(){
         function InputDate (input){
 
             var separatedInput = getInput(input);
+
             //alert(separatedInput);
 
             /*
@@ -28,18 +29,23 @@ $(document).ready(function(){
 
         function getInput (input) {
 
-            var description = "";
-            var details = "";
             var descriptionAndDetails = "";
-            description = getEventDescription1(input, "Schemalagd");
-            details = defineEnding(input.substring(description[1], input.length)); //sends in input without first event
-            //alert(details);
-            descriptionAndDetails = description + " " + details;
+            var description = getEventDescription(input, "Schemalagd");
+            var details = defineEnding(input.substring(description[1], input.length)); //sends in input without first event
+
+            descriptionAndDetails = description[0] + details;
+
+
+//Pappa fyller år
+//Schemalagd: 23 aug. 2016 12:00 till 13:00
+
+            $("#outputFrame-div").append(descriptionAndDetails);
+
             return descriptionAndDetails;
 
         }
 
-        function getEventDescription1 (text, keyword) {
+        function getEventDescription (text, keyword) {
 
             var spotlight = "";
             var searchForDividePoint = keyword;
@@ -62,98 +68,68 @@ $(document).ready(function(){
 
         function defineEnding (input) {
 
-            var textHolder = "";
-            var countSemicolonsInInput = 0;
+            var dateArray = getDate(input);
+            var monthArray = getMonth(input, dateArray[1]);
+            var definedDetailsArray = defineDetailLength(dateArray[1], monthArray[1]);
+            var yearArray = getYear(input, definedDetailsArray[2]);
+            var hoursArray = getHours(input, yearArray[1]);
 
-            var dateReturn = getDate1(input);
-            alert(dateReturn);
-            var monthArray = getMonth(input, dateReturn[1]);
-            alert(monthArray);
+            var endingDetails = [dateArray[0], monthArray[2], yearArray[0], hoursArray[0], hoursArray[1]];
+            alert(endingDetails);
 
-            for (var i = 0; i < input.length; i++){
-
-                textHolder += input[i]; //copies a part of the input into a separate variable
-
-                if(textHolder == ":"){
-
-                    countSemicolonsInInput++;
-
-                }
-
-                if (countSemicolonsInInput == 2){
-
-                    return textHolder;
-                    break;
-
-                }
-
-            }
+            return endingDetails;
 
         }
 
-        /*
-        function getEventDescription (text){
+        function defineDetailLength (dateType, monthType) {
 
-            var firstLetter = text[text.length - 39];
-            var descriptionType = 0;
-            var eventDescription = "";
-            var eventLength = 0;
+            var monthTypeString = "";
+            var dateTypeString = "";
+            var pointer = 0;
 
-            if(firstLetter == "S" || firstLetter == "c" || firstLetter == "h"){
 
-                //if firstLetter = "S" = alla månader utom maj och datum 9 <
-                //if firstLetter = "c" = antingen är det maj eller så är det ensiffrigt
-                //if "h" = både ensiffrigt och maj
-
-                switch (firstLetter) {
-                    case "S":
-                    break;
-
-                    case "c":
-                    descriptionType = 1;
-                    break;
-
-                    case "h":
-                    descriptionType = 2;
-                    break;
-                }
-
-                for (var i = 0; i < text.length - (39 + descriptionType); i++){
-
-                    eventDescription += text[i];
-                }
+            if (dateType == 1 && monthType == 1){
+                dateTypeString = "single";
+                monthTypeString = "long";
+                pointer = 19;
 
             }
-
-            else    {
-
-                alert("Something went wrong!");
+            else if (dateType == 1 && monthType == 2) {
+                dateTypeString = "single";
+                monthTypeString = "short";
+                pointer = 18;
             }
-            eventLength = eventDescription.length;
+            else if (dateType == 2 && monthType == 1) {
+                dateTypeString = "double";
+                monthTypeString = "long";
+                pointer = 20;
+            }
+            else {
+                dateTypeString = "double";
+                monthTypeString = "short";
+                pointer = 19;
+            }
 
-            var lengthAndDataReturnArray = [eventDescription, eventLength];
+            var typeAndPointerReturnArray = [dateTypeString, monthTypeString, pointer];
 
-            return lengthAndDataReturnArray;
+            return typeAndPointerReturnArray;
+
         }
-        */
 
         $("div").css("border", "1px solid red");
 
         //TODO: implementera funktionalitet för minuter
-        function getHours(input){
+        function getHours(input, startingPoint){
 
-            var startingHour = 15;
-            var finishingHour = 4;
+            var startingHour = startingPoint;
+            var finishingHour = startingPoint + 11;
             var startingTime = "";
             var finishingTime = "";
 
-                for (var i = 1; i >= 0; i--){
+                for (var i = 0; i <= 1; i++){
 
-                    var iterateStart = startingHour + i;
-                    var iterateFinish = finishingHour + i;
-
-                    startingTime += input[input.length - iterateStart];
-                    finishingTime += input[input.length - iterateFinish];
+                    startingTime += input[startingHour + i];
+                    finishingTime += input[finishingHour + i];
 
                 }
 
@@ -189,30 +165,30 @@ $(document).ready(function(){
         }
 
         //TODO: work with this so its compatible with the new month-setup
-        function getDate1(input){
+        function getDate(input){
 
             var date = "";
-            var dateType = 0;
+            var dateTypeString = 0;
 
             var firstNumber = input[12];
             var secondNumber = input[13];
 
             if(secondNumber == " "){
                 date = firstNumber;
-                dateType = 1;
+                dateTypeString = 1;
             }
             else {
                 date = firstNumber + secondNumber;
-                dateType = 2;
+                dateTypeString = 2;
             }
 
-            var dateAndDateTypeReturnArray = [date, dateType];
+            var dateAndDateTypeReturnArray = [date, dateTypeString];
 
             return dateAndDateTypeReturnArray;
 
         }
 
-        function getMonth (input, dateType){
+        function getMonth (input, dateTypeString){
 
             var inputLength = input.length;
             var month = "";
@@ -222,7 +198,7 @@ $(document).ready(function(){
             //type 1 => 4 chars
             //type 2 = 3 chars
 
-            if (dateType == 2){
+            if (dateTypeString == 2){
                 i = 16;
             }
 
@@ -235,67 +211,77 @@ $(document).ready(function(){
 
             var formatKeeper = "";
 
-            formatKeeper = month;
-
             switch (month) {
 
                 case "an.":
                     month = "januari";
                     type = 1;
+                    formatKeeper = "jan.";
                     break;
 
                 case "eb.":
                     month = "februari";
                     type = 1;
+                    formatKeeper = "feb.";
                     break;
 
                 case "ars":
                     month = "mars";
                     type = 1;
+                    formatKeeper = "mars";
                     break;
 
                 case "pr.":
                     month = "april";
                     type = 1;
+                    formatKeeper = "apr.";
                     break;
 
                 case "maj":
                     type = 2;
+                    formatKeeper = "maj";
                     break;
 
                 case "uni":
                     month = "juni";
                     type = 1;
+                    formatKeeper = "juni";
                     break;
 
                 case "uli":
                     month = "juli";
                     type = 1;
+                    formatKeeper = "juli";
                     break;
 
                 case "ug.":
                     month = "augusti";
                     type = 1;
+                    formatKeeper = "aug."
                     break;
 
                 case "ept.":
                     month = "september";
                     type = 1;
+                    formatKeeper = "sep.";
                     break;
 
                 case "kt.":
                     month = "oktober";
                     type = 1;
+                    formatKeeper = "okt.";
                     break;
 
                 case "ov.":
                     month = "november";
                     type = 1;
+                    formatKeeper = "nov.";
                     break;
 
                 case "ec.":
                     month = "december";
                     type = 1;
+                    formatKeeper = "dec.";
                     break;
 
                 default:
@@ -307,15 +293,17 @@ $(document).ready(function(){
             return returnArray;
         }
 
-        function getYear (text){
-            var inputLength = text.length;
+        function getYear (input, startingPoint){
+
             var year = "";
 
-            for (var i = 21; i > 17; i--){
-                year += text[inputLength - i];
+            for (var i = startingPoint; i < startingPoint + 4; i++){
+                year += input[i];
             }
 
-            return year;
+            var yearAndNewStartingPointArray = [year, startingPoint + 5];
+
+            return yearAndNewStartingPointArray;
         }
 
         function getSalary (amountOfHours, salary){
