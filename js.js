@@ -12,18 +12,16 @@ $(document).ready(function(){
             var remainingInput = input;
             var remainingInputLength = 0;
 
-            /*for (var i = 0; i < input.length; i++) {
+            for (var i = 0; i < input.length; i++) {
 
                 if (remainingInput === ""){
                     break;
                 }
-                */
                 remainingInputLength = getInput(remainingInput);
-                /*
+                
                 remainingInput = remainingInput.substring(remainingInputLength, remainingInput.length);
 
             }
-            */
 
         }
 
@@ -32,7 +30,6 @@ $(document).ready(function(){
             var descriptionAndDetails = "";
             var description = getEventDescription(input, "Schemalagd");
             var details = defineEnding(input.substring(description[1], input.length)); //sends in input without first event
-            alert(details);
             var remainingLength = publishEventOnSite(description, details);
 
             return remainingLength;
@@ -43,8 +40,8 @@ $(document).ready(function(){
 
             //Pappa fyller år
             //Schemalagd: 23 aug. 2016 12:00 till 13:00
-
-            var stringCounter = $("#outputFrame-div").append(description[0] + "Schemalagd: " + details[0] + " " + details[1] + " " + details[2] + " " + details[3] + " till " + details[4]);
+            var stringCounter = description[0] + "Schemalagd: " + details[0] + " " + details[1] + " " + details[2] + " " + details[3] + " till " + details[4];
+            $("#outputFrame-div").append('<br>' + description[0] + "Schemalagd: " + details[0] + " " + details[1] + " " + details[2] + " " + details[3] + " till " + details[4] + details[5] + '<br>');
             return stringCounter.length;
         }
 
@@ -76,7 +73,7 @@ $(document).ready(function(){
             var yearArray = getYear(input, definedDetailsArray[2]);
             var hoursArray = getHours(input, yearArray[1]);
 
-            var endingDetails = [dateArray[0], monthArray[2], yearArray[0], hoursArray[0], hoursArray[1]];
+            var endingDetails = [dateArray[0], monthArray[2], yearArray[0], hoursArray[0], hoursArray[1], hoursArray[3]];
 
             return endingDetails;
 
@@ -158,7 +155,7 @@ $(document).ready(function(){
             var salaryPerHour = $(".inputSalary").val();
 
             if(salaryPerHour != null){
-                var returnSalary = " och din lön blir " + getSalary(amountOfHours, salaryPerHour) + " innan skatteavdrag";
+                var returnSalary = " och din lön blir " + getSalary(amountOfHours, salaryPerHour) + " kr innan skatteavdrag.";
             }
 
             var returnAmountArray = [returnAmountString, returnSalary];
@@ -208,7 +205,6 @@ $(document).ready(function(){
 
                 month += input[i];
             }
-            alert(month);
 
             var formatKeeper = "";
 
