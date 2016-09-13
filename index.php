@@ -2,6 +2,7 @@
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script type="text/javascript" script-name="bangers" src="http://use.edgefonts.net/bangers.js"></script> 
         <script src="js.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta charset="utf-8">
@@ -13,7 +14,7 @@
             <textarea class="inputCalTextArea" placeholder="Paste here"></textarea>
             <p>Lön per arbetad timme</p>
             <input type="text" id="inputSalary" class="inputSalary"><br><br>
-            <input type="button" id="submitBtn" value="Räkna!">
+            <input type="button" id="submitBtn" value="Räkna!" id="countButton" class="enjoy-css">
         </div>
         <div id="outputDiv">
             <p>Output:</p>
